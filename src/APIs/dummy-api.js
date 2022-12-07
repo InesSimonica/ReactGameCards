@@ -16,9 +16,16 @@ export async function fetchData(numberOfCards) {
     }
 
     const collectedData = json.slice(0, numberOfCards)
-    return collectedData.map((element) => ({
+
+    return collectedData.map((element) => {
+        const collectedTitle = element.title
+        // Getting only the first word of long title and converting to uppercase
+        const shortenedTitle = collectedTitle.split(' ')[0].toUpperCase() 
+        return {
         id: element.id, 
-        title: element.title, 
-        url: element.url
-    }))
+        title: shortenedTitle, 
+        url: element.url,
+        description: element.title
+        }
+    })
 }

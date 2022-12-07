@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchData } from '../APIs/dummy-api'
-import Card from './Card'
+import Card from './card'
+import './cards-container.css'
 
 export default function CardsContainer() {
     const [cardData, setCardData] = useState([])
@@ -8,11 +9,21 @@ export default function CardsContainer() {
 
     useEffect(() => {
         fetchData(numberOfCards).then((res) => {setCardData(res)})
-
+        
     }, [])
-
+    
     return(
-        <div> Hi </div>
+        <div className= 'cards-container'>
+            {cardData.map((element) =>
+                <Card
+                    id = {element.id}
+                    title = {element.title}
+                    imageUrl = {element.url}
+                    description = {element.description}
+                />
+            )}
+        </div>
+
     )
 }
 

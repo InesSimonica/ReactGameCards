@@ -1,9 +1,19 @@
 .card {
-    background-color: rgb(41, 41, 41);
-    color:azure;
-    margin: 5px 10px 5px 10px;
+    background-color: rgb(144, 144, 144);
+    width: 255px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.card-image {
     width: 200px;
     height: 200px;
-    display: flex;
+    background-color: aliceblue;
+    object-fit: fill;
     justify-content: center;
 }
+
+

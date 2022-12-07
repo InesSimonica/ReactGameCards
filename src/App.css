@@ -1,8 +1,4 @@
 html {
-	background-color: rgb(166, 166, 172);
+	background-color: rgb(205, 205, 205);
 }
 
-.App {
-	display: flex;
-	flex-direction: row;
-}
