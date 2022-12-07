@@ -1,12 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 
+import CardsContainer from './Components/cards-container'
+
 function App() {
-  return (
-    <div className="App">
-		<h1>HELLO</h1>
-    </div>
-  );
+
+	
+	return (
+		<div className="App">
+			<CardsContainer/>
+		</div>
+	)
 }
 
-export default App;
+export default App
