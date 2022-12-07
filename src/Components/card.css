@@ -4,9 +4,7 @@
     height: 310px;
     display: flex;
     flex-direction: column;
-
 }
-
 
 .card-image {
     width: 200px;
@@ -15,5 +13,3 @@
     object-fit: fill;
     justify-content: center;
 }
-
-
