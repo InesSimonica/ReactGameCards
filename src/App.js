@@ -1,6 +1,6 @@
 import './App.css';
 
-import CardsContainer from './Components/cards-container'
+import CardsContainer from './components/cards-container'
 
 function App() {
 

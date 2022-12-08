@@ -1,18 +1,11 @@
 export async function fetchData(numberOfCards) {
-    let response, json
-   
-    try {
-        response = await fetch('https://jsonplaceholder.typicode.com/photos')
-    } catch (e) {
-        console.error('Could not fetch ' + e)
-        return
-    }
+    let json
 
     try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/photos')
         json = await response.json()
     } catch (e) {
-        console.error('Could not read json from response ' + e)
-        return
+        return e
     }
 
     const collectedData = json.slice(0, numberOfCards)
