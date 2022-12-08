@@ -1,5 +1,5 @@
 .card {
-    background-color: rgb(37, 31, 69);
+    background-color: rgb(36, 31, 61);
     color:rgb(240, 248, 248);
     margin-top: 15px;
     width: 255px;
@@ -42,6 +42,17 @@
     justify-content: center;
     align-items: center;
 
+}
+
+.card:hover {
+    outline-style: solid;
+    outline-width: 0.5px;
+    outline-color: rgba(157, 167, 234, 0.529);
+    box-shadow: 0px 0px 20px 5px rgba(234, 234, 234, 0.097);
+}
+
+.card:hover .card-title {
+    text-decoration: underline;
 }
 
 @media only screen and (max-width: 500px ) {
