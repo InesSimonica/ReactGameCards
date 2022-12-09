@@ -1,13 +1,17 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
+import About from './components/about/about'
+import Homepage from './components/homepage/homepage'
 
-import CardsContainer from './components/cards-container'
 
 function App() {
 
-	
 	return (
 		<div className="App">
-			<CardsContainer/>
+			<Routes>
+				<Route path='/' element={<Homepage/>}/>
+				<Route path='about' element={<About/>}/>
+			</Routes>
 		</div>
 	)
 }

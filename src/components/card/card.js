@@ -1,6 +1,6 @@
 import './card.css'
-import './description-window'
-import DescriptionWindow from './description-window'
+
+
 
 export default function Card ({ title, imageUrl, description}) {
     
@@ -13,7 +13,7 @@ export default function Card ({ title, imageUrl, description}) {
 
     function OpenNewWindow(description) {
         console.log(description)
-        let myWindow = window.open('', 'Game description', 'width=500,height=400' )
+        let myWindow = window.open('http://localhost:3000/about', 'Game description', 'width=500,height=400' )
 
     }
 }
