@@ -22,3 +22,15 @@ export async function fetchData(numberOfCards) {
         }
     })
 }
+
+export async function fetchDataById(id) {
+    let json
+
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/photos/' + id)
+        json = await response.json()
+    } catch (e) {
+        return e
+    }
+    return json.title
+}

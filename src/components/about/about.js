@@ -1,10 +1,24 @@
 import './about.css'
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import { fetchDataById } from '../../apis/dummy-api'
+import { useEffect, useState } from 'react'
 
-export default function About(id) {
+export default function About() {
+    const [description, setDescription] = useState('')
+    const { id } = useParams() 
+    
+    console.log(id) 
+    useEffect(() => {
+        fetchDataById(id).then((res) => {setDescription(res)}).catch((e) => {
+            console.error('[ERROR FETCHING BY ID]: ' + e)
+        })
+    }, '')
+ 
+    console.log(description)
     return(
         <div className="about-window">
-            <label>'QUACK'</label>
+            <label>{description}</label>
         </div>
     )
 }

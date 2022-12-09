@@ -2,7 +2,7 @@ import './card.css'
 
 
 
-export default function Card ({ title, imageUrl, description}) {
+export default function Card ({ id, title, imageUrl, description}) {
     
     return(
         <div className='card' onClick={() => OpenNewWindow(description)}>
@@ -12,8 +12,6 @@ export default function Card ({ title, imageUrl, description}) {
     )
 
     function OpenNewWindow(description) {
-        console.log(description)
-        let myWindow = window.open('http://localhost:3000/about', 'Game description', 'width=500,height=400' )
-
+        const myWindow = window.open('http://localhost:3000/about/'+ id, 'Game description', 'width=500,height=400' )
     }
 }

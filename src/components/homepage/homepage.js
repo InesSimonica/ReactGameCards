@@ -21,6 +21,7 @@ export default function Homepage() {
             {cards.map((element) =>
                 <Card
                     key = {element.id}
+                    id = {element.id}
                     title = {element.title}
                     imageUrl = {element.url}
                     description = {element.description}
