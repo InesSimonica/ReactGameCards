@@ -2,7 +2,7 @@ import '../Style/Card.css'
 
 
 
-export default function Card ({ id, title, imageUrl, description}) {
+export const Card = ({ id, title, imageUrl, description}) => {
     
     return(
         <div className='card' onClick={() => OpenNewWindow(description)}>
@@ -15,3 +15,5 @@ export default function Card ({ id, title, imageUrl, description}) {
         const myWindow = window.open('http://localhost:3000/about/'+ id, 'Game description', 'width=700,height=200' )
     }
 }
+
+export default Card

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { fetchDataById } from '../../Apis/Dummy-api'
 import { useEffect, useState } from 'react'
 
-export default function About() {
+export const About = () => {
     const [description, setDescription] = useState('')
     const { id } = useParams() 
     
@@ -22,3 +22,5 @@ export default function About() {
         </div>
     )
 }
+
+export default About

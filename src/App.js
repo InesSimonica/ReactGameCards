@@ -4,7 +4,7 @@ import About from './Components/About/About'
 import Homepage from './Components/Homepage/Homepage'
 
 
-function App() {
+const App = () => {
 
 	return (
 		<div className="App">

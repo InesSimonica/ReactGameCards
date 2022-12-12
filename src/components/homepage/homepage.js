@@ -3,7 +3,7 @@ import Card from '../Card/Card'
 import { fetchData } from '../../Apis/Dummy-api'
 import '../Style/Homepage.css'
 
-export default function Homepage() {
+export const Homepage = () =>  {
     const [cards, setCards] = useState([])
 	const [errorMessage, setErrorMessage] = useState([])
 
@@ -33,3 +33,4 @@ export default function Homepage() {
     )
 }
 
+export default Homepage

@@ -1,4 +1,4 @@
-export async function fetchData(numberOfCards) {
+export const fetchData = async (numberOfCards) => {
     let json
 
     try {
@@ -23,7 +23,7 @@ export async function fetchData(numberOfCards) {
     })
 }
 
-export async function fetchDataById(id) {
+export const fetchDataById = async (id) => {
     let json
 
     try {
