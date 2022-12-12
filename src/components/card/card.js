@@ -12,6 +12,6 @@ export default function Card ({ id, title, imageUrl, description}) {
     )
 
     function OpenNewWindow(description) {
-        const myWindow = window.open('http://localhost:3000/about/'+ id, 'Game description', 'width=500,height=400' )
+        const myWindow = window.open('http://localhost:3000/about/'+ id, 'Game description', 'width=700,height=200' )
     }
 }
