@@ -1,0 +1,14 @@
+.cards-container {
+  column-gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  justify-items: center;
+  row-gap: 40px;
+}
+
+@media only screen and (max-width: 500px) {
+  .cards-container {
+    row-gap: 10px;
+  }
+}

@@ -1,0 +1,9 @@
+.about-window {
+  align-items: center;
+  color: azure;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  height: 100vh;
+  justify-content: center;
+}

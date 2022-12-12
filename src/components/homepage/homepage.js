@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import Card from '../card/card'
-import { fetchData } from '../../apis/dummy-api'
-import './homepage.css'
+import Card from '../Card/Card'
+import { fetchData } from '../../Apis/Dummy-api'
+import '../Style/Homepage.css'
 
 export default function Homepage() {
     const [cards, setCards] = useState([])

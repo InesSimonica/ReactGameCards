@@ -1,7 +1,7 @@
-import './about.css'
+import '../Style/About.css'
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { fetchDataById } from '../../apis/dummy-api'
+import { fetchDataById } from '../../Apis/Dummy-api'
 import { useEffect, useState } from 'react'
 
 export default function About() {

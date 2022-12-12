@@ -1,7 +1,7 @@
-import './App.css';
+import './Components/Style/App.css';
 import { Routes, Route } from 'react-router-dom'
-import About from './components/about/about'
-import Homepage from './components/homepage/homepage'
+import About from './Components/About/About'
+import Homepage from './Components/Homepage/Homepage'
 
 
 function App() {
@@ -11,8 +11,6 @@ function App() {
 			<Routes>
 				<Route path='/' element={<Homepage/>}/>
 				<Route path='/about/:id' element={<About/>}/>
-				
-				
 			</Routes>
 		</div>
 	)
