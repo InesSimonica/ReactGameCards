@@ -1,13 +1,17 @@
-import './App.css';
+import './Components/Style/App.css';
+import { Routes, Route } from 'react-router-dom'
+import About from './Components/About/About'
+import Homepage from './Components/Homepage/Homepage'
 
-import CardsContainer from './Components/cards-container'
 
-function App() {
+const App = () => {
 
-	
 	return (
 		<div className="App">
-			<CardsContainer/>
+			<Routes>
+				<Route path='/' element={<Homepage/>}/>
+				<Route path='/about/:id' element={<About/>}/>
+			</Routes>
 		</div>
 	)
 }

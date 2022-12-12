@@ -1,0 +1,12 @@
+@import './Colors.css';
+@import './Fonts.css';
+
+.about-window {
+  align-items: center;
+  color: var(--font-color);
+  display: flex;
+  font-family: var(--card-font);
+  font-size: 20px;
+  height: 100vh;
+  justify-content: center;
+}

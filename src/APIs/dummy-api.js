@@ -1,18 +1,11 @@
-export async function fetchData(numberOfCards) {
-    let response, json
-   
-    try {
-        response = await fetch('https://jsonplaceholder.typicode.com/photos')
-    } catch (e) {
-        console.error('Could not fetch ' + e)
-        return
-    }
+export const fetchData = async (numberOfCards) => {
+    let json
 
     try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/photos')
         json = await response.json()
-    } catch (e) {
-        console.error('Could not read json from response ' + e)
-        return
+    } catch (error) {
+        return error
     }
 
     const collectedData = json.slice(0, numberOfCards)
@@ -28,4 +21,16 @@ export async function fetchData(numberOfCards) {
         description: element.title
         }
     })
+}
+
+export const fetchDataById = async (id) => {
+    let json
+
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/photos/' + id)
+        json = await response.json()
+    } catch (error) {
+        return error
+    }
+    return json.title
 }
