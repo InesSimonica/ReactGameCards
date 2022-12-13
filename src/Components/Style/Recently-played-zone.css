@@ -1,0 +1,35 @@
+.recently-played-zone-container {
+    align-self: center;
+    background-color: rgb(4, 4, 31);
+    column-gap: 5px;
+    display: grid;
+    grid-template-columns: 190px 190px;
+    grid-template-rows: 230px 230px;
+    height:fit-content;
+    justify-items: center;
+    margin: 10px 10px 10px 10px;
+    row-gap: 0px;
+    width: fit-content;
+    border-radius: 10px;
+}
+
+ .recently-played-zone-container > .card {
+    height: 206px;
+    width: 170px;
+}
+
+.recently-played-zone-container > .card > .card-image {
+    height: 133px;
+    width: 133px;
+}
+
+.recently-played-zone-container > .card > .card-title {
+    font-size: 0.8rem;
+}
+
+ @media only screen and (max-width: 500px) {    
+    .recently-played-zone-container {
+        flex-direction: column;
+        height: auto;
+    }
+     }

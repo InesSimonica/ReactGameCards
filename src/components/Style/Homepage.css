@@ -7,6 +7,11 @@
   row-gap: 40px;
 }
 
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+}
+
 @media only screen and (max-width: 500px) {
   .cards-container {
     row-gap: 10px;
