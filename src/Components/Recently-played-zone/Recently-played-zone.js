@@ -1,31 +1,30 @@
-import { fetchData } from '../../Apis/Dummy-api'
+import { useEffect } from 'react'
 import Card from '../Card/Card'
 import '../Style/Recently-played-zone.css'
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
 
-
-export const RecentlyPlayedZone = () => {
-    const [cards, setCards] = useState([])
+export const RecentlyPlayedZone = ({receivedCards}) => {
 
     useEffect(() => {
-        fetchData(4).then((res) => {setCards(res)}).catch((error) => {
-            console.error('[ERROR IN RECENTLY PLAYED ZONE COMPONENT FETCH DATA]: ' + error)
-        })
-    }, [])
-
+        console.log('The recent cards have changed!')
+    }, [receivedCards])
 
     return (
         <div className='recently-played-zone-container'>
-            {cards.map((element) =>
-                <Card
-                    key = {element.id}
-                    id = {element.id}
-                    title = {element.title}
-                    imageUrl = {element.url}
-                    description = {element.description}
-                />
-            )}
+            <label className='recently-played-label'>Recently played</label>
+            <div className='recently-played-cards-container'>
+                {receivedCards.map((element) =>
+                    <Card
+                        key = {element.id}
+                        id = {element.id}
+                        title = {element.title}
+                        imageUrl = {element.url}
+                        description = {element.description}
+                    />
+                )}
+            </div>
         </div>
+
     )
 }
 

@@ -2,12 +2,15 @@ import '../Style/Card.css'
 
 
 
-export const Card = ({ id, title, imageUrl, description}) => {
+export const Card = ({ id, title, imageUrl, description, AddRecentCard}) => {
     
     return(
-        <div className='card' onClick={() => OpenNewWindow(description)}>
+        <div className='card' onClick={() => {
+            OpenNewWindow(description)
+            AddRecentCard(id)
+            }}>
             <label className='card-title'> {title} </label>
-            <img className='card-image' src= {imageUrl} alt= 'Could not find img'/> 
+            <img className='card-image' src= {imageUrl} alt= 'card visual'/> 
         </div>      
     )
 

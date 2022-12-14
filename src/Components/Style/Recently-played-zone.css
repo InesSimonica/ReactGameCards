@@ -1,34 +1,53 @@
+@import './Colors.css';
+@import './Fonts.css';
+
 .recently-played-zone-container {
+    background-color: var( --recently-played-zone-shadow-color);
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
     align-self: center;
-    background-color: rgb(4, 4, 31);
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.recently-played-label {
+    font-family: var(--card-font);
+    color: var(--font-color);
+    margin: 10px;
+    height: fit-content;
+ }
+
+.recently-played-cards-container {
+
     column-gap: 5px;
     display: grid;
     grid-template-columns: 190px 190px;
     grid-template-rows: 230px 230px;
     height:fit-content;
     justify-items: center;
-    margin: 10px 10px 10px 10px;
+    margin: 10px;
     row-gap: 0px;
-    width: fit-content;
-    border-radius: 10px;
 }
 
- .recently-played-zone-container > .card {
+ .recently-played-cards-container > .card {
     height: 206px;
     width: 170px;
 }
 
-.recently-played-zone-container > .card > .card-image {
+.recently-played-cards-container > .card > .card-image {
     height: 133px;
     width: 133px;
 }
 
-.recently-played-zone-container > .card > .card-title {
+.recently-played-cards-container > .card > .card-title {
     font-size: 0.8rem;
 }
 
  @media only screen and (max-width: 500px) {    
-    .recently-played-zone-container {
+    .recently-played-cards-container {
         flex-direction: column;
         height: auto;
     }
