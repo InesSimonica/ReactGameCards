@@ -13,6 +13,7 @@
 }
 
 @media only screen and (max-width: 500px) {
+  
   .cards-container {
     row-gap: 10px;
   }

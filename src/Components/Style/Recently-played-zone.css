@@ -1,54 +1,108 @@
-@import './Colors.css';
-@import './Fonts.css';
+@import "./Colors.css";
+@import "./Fonts.css";
 
 .recently-played-zone-container {
-    background-color: var( --recently-played-zone-shadow-color);
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    align-self: center;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    border-radius: 10px;
+  align-items: center;
+  align-self: center;
+  background-color: var(--recently-played-zone-shadow-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  width: fit-content;
 }
 
 .recently-played-label {
-    font-family: var(--card-font);
-    color: var(--font-color);
-    margin: 10px;
+  color: var(--font-color);
+  font-family: var(--card-font);
+  height: fit-content;
+  margin: 10px;
+}
+
+.recently-played-cards-container-0 {
+  display: none;
+}
+
+.recently-played-cards-container-1,
+.recently-played-cards-container-2,
+.recently-played-cards-container-3 {
+  align-items: center;
+  display: flex;
+  height: 95%;
+  justify-content: center;
+  margin: 10px;
+  width: 95%;
+}
+
+.recently-played-cards-container-2 {
+  justify-content: space-evenly;
+}
+
+.recently-played-cards-container-3 {
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 380px;
+}
+
+.recently-played-cards-container-4 {
+  column-gap: 5px;
+  display: grid;
+  grid-template-columns: 190px 190px;
+  grid-template-rows: 230px 230px;
+  height: fit-content;
+  justify-items: center;
+  margin: 10px;
+  row-gap: 0px;
+}
+
+.recently-played-cards-container-0 > .card,
+.recently-played-cards-container-1 > .card,
+.recently-played-cards-container-2 > .card,
+.recently-played-cards-container-3 > .card,
+.recently-played-cards-container-4 > .card {
+  height: 206px;
+  margin: 10px;
+  width: 170px;
+}
+
+.recently-played-cards-container-0 > .card > .card-image,
+.recently-played-cards-container-1 > .card > .card-image,
+.recently-played-cards-container-2 > .card > .card-image,
+.recently-played-cards-container-3 > .card > .card-image,
+.recently-played-cards-container-4 > .card > .card-image {
+  height: 133px;
+  width: 133px;
+}
+
+.recently-played-cards-container-0 > .card > .card-title,
+.recently-played-cards-container-1 > .card > .card-title,
+.recently-played-cards-container-2 > .card > .card-title,
+.recently-played-cards-container-3 > .card > .card-title,
+.recently-played-cards-container-4 > .card > .card-title {
+  font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .recently-played-cards-container-4 {
+    column-gap: 15px;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 190px 190px;
     height: fit-content;
- }
-
-.recently-played-cards-container {
-
-    column-gap: 5px;
-    display: grid;
-    grid-template-columns: 190px 190px;
-    grid-template-rows: 230px 230px;
-    height:fit-content;
     justify-items: center;
-    margin: 10px;
-    row-gap: 0px;
-}
+  }
 
- .recently-played-cards-container > .card {
-    height: 206px;
-    width: 170px;
-}
+  .recently-played-cards-container-2,
+  .recently-played-cards-container-3 {
+    width: 320px;
+  }
 
-.recently-played-cards-container > .card > .card-image {
-    height: 133px;
-    width: 133px;
+  .recently-played-cards-container-1 > .card,
+  .recently-played-cards-container-2 > .card,
+  .recently-played-cards-container-3 > .card,
+  .recently-played-cards-container-4 > .card {
+    height: 180px;
+    margin: 5px;
+    width: 150px;
+  }
 }
-
-.recently-played-cards-container > .card > .card-title {
-    font-size: 0.8rem;
-}
-
- @media only screen and (max-width: 500px) {    
-    .recently-played-cards-container {
-        flex-direction: column;
-        height: auto;
-    }
-     }

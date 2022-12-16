@@ -3,17 +3,12 @@ import Card from '../Card/Card'
 import { fetchData } from '../../Apis/Dummy-api'
 import '../Style/Homepage.css'
 import RecentlyPlayedZone from '../Recently-played-zone/Recently-played-zone'
-import { click } from '@testing-library/user-event/dist/click'
-
 
 export const Homepage = () =>  {
     const [cards, setCards] = useState([])
 	const [errorMessage, setErrorMessage] = useState([])
 	const [recentlyPlayedCards, setRecentlyPlayedCards] = useState([])
-    
-
 	const numberOfCards = 20
-
 
     useEffect(() => {
         fetchData(numberOfCards)
@@ -32,7 +27,7 @@ export const Homepage = () =>  {
     //     }
     // }, [cards])
 
-    const AddRecentCard = (clickedCardId) => {
+    const addRecentCard = (clickedCardId) => {
         setRecentlyPlayedCards((oldCardsArray) => {
             const found = oldCardsArray.find((element) => element === cards[clickedCardId - 1])
             if (found) {
@@ -54,8 +49,6 @@ export const Homepage = () =>  {
         
     }
 
-
-
     return(
         <div className='homepage-container'>
             <div className= 'cards-container'>
@@ -66,21 +59,16 @@ export const Homepage = () =>  {
                         title={element.title}
                         imageUrl={element.url}
                         description={element.description}
-                        AddRecentCard={AddRecentCard}
+                        AddRecentCard={addRecentCard}
                     />
                 )}
             </div>
             <RecentlyPlayedZone
                 receivedCards={recentlyPlayedCards}
+                AddRecentCard={addRecentCard}
             />
         </div>
-
     )
-
 }
-
-
-
-
 
 export default Homepage

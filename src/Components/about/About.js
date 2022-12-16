@@ -8,14 +8,12 @@ export const About = () => {
     const [description, setDescription] = useState('')
     const { id } = useParams() 
     
-    console.log(id) 
     useEffect(() => {
         fetchDataById(id).then((res) => {setDescription(res)}).catch((e) => {
             console.error('[ERROR FETCHING BY ID]: ' + e)
         })
     }, '')
  
-    console.log(description)
     return(
         <div className="about-window">
             <label>{description}</label>
