@@ -21,21 +21,22 @@ export const Homepage = () =>  {
             setErrorMessage(error)
             console.error('[ERROR IN HOMEPAGE COMPONENT FETCH DATA]: ' + errorMessage)
         })
-    },[])
+    }, [])
 
     useEffect(() => {
-    if (cards.length) {
-        console.log(cards)
-        const firstCards = cards.slice(0,4)
-        setRecentlyPlayedCards(firstCards)
-    }
+        if (cards.length) {
+            console.log(cards)
+            const firstCards = cards.slice(0,4)
+            setRecentlyPlayedCards(firstCards)
+        }
     }, [cards])
 
     const AddRecentCard = (clickedCardId) => {
-        const updatedRecentlyPlayedCards = recentlyPlayedCards
-        updatedRecentlyPlayedCards.unshift(cards[clickedCardId-1])
-        updatedRecentlyPlayedCards.pop()
-        setRecentlyPlayedCards(updatedRecentlyPlayedCards)
+        setRecentlyPlayedCards((oldCardsArray) => {
+            oldCardsArray.unshift(cards[clickedCardId - 1])
+            oldCardsArray.pop()
+            return [...oldCardsArray]
+        })
         
     }
 
@@ -46,17 +47,17 @@ export const Homepage = () =>  {
             <div className= 'cards-container'>
                 {cards.map((element) =>
                     <Card
-                        key = {element.id}
-                        id = {element.id}
-                        title = {element.title}
-                        imageUrl = {element.url}
-                        description = {element.description}
-                        AddRecentCard = {AddRecentCard}
+                        key={element.id}
+                        id={element.id}
+                        title={element.title}
+                        imageUrl={element.url}
+                        description={element.description}
+                        AddRecentCard={AddRecentCard}
                     />
                 )}
             </div>
             <RecentlyPlayedZone
-                receivedCards = {recentlyPlayedCards}
+                receivedCards={recentlyPlayedCards}
             />
         </div>
 
