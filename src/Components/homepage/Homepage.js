@@ -3,6 +3,7 @@ import Card from '../Card/Card'
 import { fetchData } from '../../Apis/Dummy-api'
 import '../Style/Homepage.css'
 import RecentlyPlayedZone from '../Recently-played-zone/Recently-played-zone'
+import { click } from '@testing-library/user-event/dist/click'
 
 
 export const Homepage = () =>  {
@@ -23,19 +24,32 @@ export const Homepage = () =>  {
         })
     }, [])
 
-    useEffect(() => {
-        if (cards.length) {
-            console.log(cards)
-            const firstCards = cards.slice(0,4)
-            setRecentlyPlayedCards(firstCards)
-        }
-    }, [cards])
+    // useEffect(() => {
+    //     if (cards.length) {
+    //         console.log(cards)
+    //         const firstCards = cards.slice(0,4)
+    //         setRecentlyPlayedCards(firstCards)
+    //     }
+    // }, [cards])
 
     const AddRecentCard = (clickedCardId) => {
         setRecentlyPlayedCards((oldCardsArray) => {
-            oldCardsArray.unshift(cards[clickedCardId - 1])
-            oldCardsArray.pop()
-            return [...oldCardsArray]
+            const found = oldCardsArray.find((element) => element === cards[clickedCardId - 1])
+            if (found) {
+                return [...oldCardsArray]
+            }
+            else {
+                if (oldCardsArray.length >= 4) {
+                    oldCardsArray.unshift(cards[clickedCardId - 1])
+                    oldCardsArray.pop()
+                    return [...oldCardsArray]
+                }
+                else {  
+                    oldCardsArray.unshift(cards[clickedCardId - 1])
+                    return [...oldCardsArray]
+                }
+            }
+
         })
         
     }
