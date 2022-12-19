@@ -14,7 +14,7 @@ export const RecentlyPlayedZone = ({ receivedCards, addRecentCard }) => {
                         title={element.title}
                         imageUrl={element.url}
                         description={element.description}
-                        AddRecentCard={addRecentCard}
+                        addRecentCard={addRecentCard}
                     />
                 )}
             </div>

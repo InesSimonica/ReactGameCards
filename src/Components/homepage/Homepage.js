@@ -65,7 +65,7 @@ export const Homepage = () =>  {
             </div>
             <RecentlyPlayedZone
                 receivedCards={recentlyPlayedCards}
-                AddRecentCard={addRecentCard}
+                addRecentCard={addRecentCard}
             />
         </div>
     )
