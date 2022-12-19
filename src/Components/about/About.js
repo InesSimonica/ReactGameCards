@@ -9,8 +9,8 @@ export const About = () => {
     const { id } = useParams() 
     
     useEffect(() => {
-        fetchDataById(id).then((res) => {setDescription(res)}).catch((e) => {
-            console.error('[ERROR FETCHING BY ID]: ' + e)
+        fetchDataById(id).then((res) => {setDescription(res)}).catch((error) => {
+            console.error('[ERROR FETCHING BY ID]: ' + error)
         })
     }, '')
  

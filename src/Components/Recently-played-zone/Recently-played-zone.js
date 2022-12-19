@@ -7,13 +7,13 @@ export const RecentlyPlayedZone = ({ receivedCards, addRecentCard }) => {
             <label className='recently-played-label'>Recently played</label>
 
             <div className={`recently-played-cards-container-${receivedCards.length}`}>
-                {receivedCards.map((element) =>
+                {receivedCards.map(({id, title, url, description}) =>
                     <Card
-                        key={element.id}
-                        id={element.id}
-                        title={element.title}
-                        imageUrl={element.url}
-                        description={element.description}
+                        key={id}
+                        id={id}
+                        title={title}
+                        imageUrl={url}
+                        description={description}
                         addRecentCard={addRecentCard}
                     />
                 )}

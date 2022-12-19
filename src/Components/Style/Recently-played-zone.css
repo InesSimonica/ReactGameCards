@@ -56,30 +56,18 @@
   row-gap: 0px;
 }
 
-.recently-played-cards-container-0 > .card,
-.recently-played-cards-container-1 > .card,
-.recently-played-cards-container-2 > .card,
-.recently-played-cards-container-3 > .card,
-.recently-played-cards-container-4 > .card {
+div[class^="recently-played-cards-container-"] > .card {
   height: 206px;
   margin: 10px;
   width: 170px;
 }
 
-.recently-played-cards-container-0 > .card > .card-image,
-.recently-played-cards-container-1 > .card > .card-image,
-.recently-played-cards-container-2 > .card > .card-image,
-.recently-played-cards-container-3 > .card > .card-image,
-.recently-played-cards-container-4 > .card > .card-image {
+div[class^="recently-played-cards-container-"] > .card > .card-image {
   height: 133px;
   width: 133px;
 }
 
-.recently-played-cards-container-0 > .card > .card-title,
-.recently-played-cards-container-1 > .card > .card-title,
-.recently-played-cards-container-2 > .card > .card-title,
-.recently-played-cards-container-3 > .card > .card-title,
-.recently-played-cards-container-4 > .card > .card-title {
+div[class^="recently-played-cards-container-"] > .card > .card-title {
   font-size: 0.8rem;
 }
 
