@@ -13,24 +13,27 @@
 
 .recently-played-label {
   background-color: var(--recently-played-zone-shadow-color);
+  border-radius: 5px;
   color: var(--font-color);
   display: flex;
   font-family: var(--card-font);
   height: fit-content;
   justify-content: center;
-  padding: 10px 0px 10px 0px;
   margin-bottom: 5px;
-}
-
-.recently-played-label,
-div[class^="recently-played-cards-container-"] {
-  border-radius: 5px;
-  width: 500px;
+  padding: 10px 0px 10px 0px;
+  width: 100%;
 }
 
 div[class^="recently-played-cards-container-"] {
   background-color: var(--recently-played-zone-shadow-color);
-  height: 220px;
+  border-radius: 5px;
+  height: fit-content;
+  padding: 10px;
+  width: fit-content;
+}
+
+.recently-played-cards-container-0 {
+  display: none;
 }
 
 .recently-played-cards-container-1,
@@ -41,26 +44,29 @@ div[class^="recently-played-cards-container-"] {
   justify-content: space-evenly;
 }
 
-.recently-played-cards-container-3 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+.recently-played-cards-container-1 > .card,
+.recently-played-cards-container-1 > .card > .card-image,
+.recently-played-cards-container-2 > .card,
+.recently-played-cards-container-2 > .card > .card-image {
+  height: 200px;
+  margin: 0px;
+  margin: 10px;
+  width: 200px;
 }
 
-div[class^="recently-played-cards-container-"] > .card {
-  margin: 10px;
-}
-.recently-played-cards-container-1 > .card,
-.recently-played-cards-container-2 > .card,
-.recently-played-cards-container-3 > .card {
-  height: 200px;
-  width: 200px;
+.recently-played-cards-container-3 {
+  column-gap: 10px;
+  column-gap: 1px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
 }
 
 .recently-played-cards-container-3 > .card:first-child {
   grid-column: 1;
   grid-row-end: 3;
   grid-row-start: 1;
+  margin: 10px;
 }
 
 .recently-played-cards-container-3 > .card:nth-child(2) {
@@ -77,67 +83,50 @@ div[class^="recently-played-cards-container-"] > .card {
 .recently-played-cards-container-4 > .card,
 .recently-played-cards-container-4 > .card > .card-image {
   height: 90px;
+  margin: 10px;
   object-fit: cover;
-  width: 230px;
+  width: 180px;
 }
 
 .recently-played-cards-container-4 {
-  column-gap: 5px;
   display: grid;
-  grid-template-columns: 250px 250px;
-  grid-template-rows: 100px 100px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   height: fit-content;
   justify-items: center;
-  margin: 10px;
-  row-gap: 0px;
 }
 
 @media only screen and (max-width: 500px) {
   .recently-played-label {
-    width: 320px;
+    width: 100%;
   }
 
-  .card, .card > .card-image {
-    width: 300px;
+  .card,
+  .card > .card-image {
     height: 300px;
+    width: 300px;
   }
 
   div[class^="recently-played-cards-container-"] {
-    width: 320px;
-    height: auto;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: auto;
+    width: auto;
   }
   div[class^="recently-played-cards-container-"] > .card,
-  div[class^="recently-played-cards-container-"] > .card >.card-image {
-    object-fit: cover;
+  div[class^="recently-played-cards-container-"] > .card > .card-image {
     height: 90px;
-    margin: 5px;
-    width: 230px;
+    margin: 10px;
+    object-fit: cover;
+    width: 180px;
   }
 }
 
 @media only screen and (max-width: 300px) {
-  .recently-played-label {
-    width: 270px;
-  }
-
-  div[class^="recently-played-cards-container-"] {
-    width: 270px;
-  }
-
-  div[class^="recently-played-cards-container-"] > .card,
-  div[class^="recently-played-cards-container-"] > .card >.card-image {
-    object-fit: cover;
-    height: 90px;
-    margin: 5px;
-    width: 216px;
-  }
-
-  .card, .card > .card-image {
-    width: 270px;
+  .card,
+  .card > .card-image {
     height: 270px;
+    width: 270px;
   }
-
 }
